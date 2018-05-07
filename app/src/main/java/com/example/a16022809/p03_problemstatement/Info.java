@@ -44,11 +44,11 @@ public class Info extends AppCompatActivity {
 
         lv = (ListView)findViewById(R.id.lv);
         Grade = new ArrayList<DailyGrade>();
-        Grade.add(new Grade("Android Programming II","C347","https://www.rp.edu.sg/schools-courses/courses/full-time-diplomas/full-time-courses/modules/index/C347"));
-        Grade.add(new Grade("Web Services","C302","https://www.rp.edu.sg/schools-courses/courses/full-time-diplomas/full-time-courses/modules/index/C302"));
+        Grade.add(new DailyGrade("Android Programming II","C347"));
+        Grade.add(new DailyGrade("Web Services","C302"));
 
 
-        aa = new CourseAdapter(this, R.layout.info_row, Grade);
+        aa = new DailyGradeAdapter(this, R.layout.info_row, Grade);
         lv.setAdapter(aa);
 
     }
