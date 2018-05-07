@@ -47,8 +47,8 @@ public class CourseAdapter extends ArrayAdapter<Course> {
         Course currentCourse = course.get(position);
         // Set the TextView to show the food
 
-        tvModuleName.setText(currentCourse.moduleName);
-        tvModuleCode.setText(currentCourse.moduleCode);
+        tvModuleName.setText(currentCourse.getModuleName());
+        tvModuleCode.setText(currentCourse.getModuleCode());
 
         return rowView;
     }

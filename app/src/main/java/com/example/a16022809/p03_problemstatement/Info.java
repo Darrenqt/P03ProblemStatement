@@ -13,7 +13,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class Info extends AppCompatActivity {
-    Button info;
+    Button info,add;
     private ListView lv;
     private ArrayAdapter aa;
     private ArrayList<DailyGrade> Grade;
@@ -25,12 +25,11 @@ public class Info extends AppCompatActivity {
         Intent i = getIntent();
         String code = i.getStringExtra("courseCode");
         final String link = i.getStringExtra("link");
-        Log.i("ttt",code);
         getSupportActionBar().setTitle("Info for "+code);
 
 
         info = (Button)findViewById(R.id.buttonInfo);
-
+        add = (Button)findViewById(R.id.buttonAdd);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,11 +41,22 @@ public class Info extends AppCompatActivity {
             }
         });
 
+        add.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Info.this, AddActivity.class);
+                startActivity(intent);
+
+            }
+        });
         lv = (ListView)findViewById(R.id.lv);
         Grade = new ArrayList<DailyGrade>();
-        Grade.add(new DailyGrade("Week 1","B"));
-        Grade.add(new DailyGrade("Week 2","C"));
-        Grade.add(new DailyGrade("Week 3","A"));
+        Grade.add(new DailyGrade("1","B"));
+        Grade.add(new DailyGrade("2","C"));
+        Grade.add(new DailyGrade("3","A"));
+
+        Log.i("numof week",Grade.size()+"");
+//        Grade.add(new DailyGrade(Integer.toString(Grade.size()+1),));
 
 
         aa = new DailyGradeAdapter(this, R.layout.info_row, Grade);

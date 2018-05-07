@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DailyGradeAdapter extends ArrayAdapter<DailyGrade> {
     private ArrayList<DailyGrade> grade;
     private Context context;
-    private TextView tvDG, tvGrade;
+    private TextView tvDG, tvGrade,tvWeek;
 
     public DailyGradeAdapter(Context context, int resource, ArrayList<DailyGrade> objects) {
         super(context, resource, objects);
@@ -39,6 +39,7 @@ public class DailyGradeAdapter extends ArrayAdapter<DailyGrade> {
         tvDG = (TextView) rowView.findViewById(R.id.textViewDG);
         // Get the ImageView object
         tvGrade = (TextView) rowView.findViewById(R.id.textViewGrade);
+        tvWeek = (TextView)rowView.findViewById(R.id.textViewWeek);
 //
 //
         // The parameter "position" is the index of the
@@ -46,7 +47,7 @@ public class DailyGradeAdapter extends ArrayAdapter<DailyGrade> {
         //  We get back the food at the same index.
         DailyGrade currentGrade = grade.get(position);
         // Set the TextView to show the food
-
+        tvWeek.setText("Week "+currentGrade.getWeek());
         tvDG.setText("DG");
         tvGrade.setText(currentGrade.getGrade());
 
