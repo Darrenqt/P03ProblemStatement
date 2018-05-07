@@ -44,8 +44,9 @@ public class Info extends AppCompatActivity {
 
         lv = (ListView)findViewById(R.id.lv);
         Grade = new ArrayList<DailyGrade>();
-        Grade.add(new DailyGrade("Android Programming II","C347"));
-        Grade.add(new DailyGrade("Web Services","C302"));
+        Grade.add(new DailyGrade("Week 1","B"));
+        Grade.add(new DailyGrade("Week 2","C"));
+        Grade.add(new DailyGrade("Week 3","A"));
 
 
         aa = new DailyGradeAdapter(this, R.layout.info_row, Grade);
