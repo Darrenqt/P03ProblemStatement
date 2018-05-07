@@ -40,7 +40,7 @@ public class DailyGradeAdapter extends ArrayAdapter<DailyGrade> {
         // Get the ImageView object
         tvGrade = (TextView) rowView.findViewById(R.id.textViewGrade);
 //
-
+//
         // The parameter "position" is the index of the
         //  row ListView is requesting.
         //  We get back the food at the same index.
