@@ -57,7 +57,10 @@ public class Info extends AppCompatActivity {
 
         Log.i("numof week",Grade.size()+"");
 //        Grade.add(new DailyGrade(Integer.toString(Grade.size()+1),));
-
+        Intent add = getIntent();
+        String adddata = add.getStringExtra("add");
+        String count = Integer.toString(Grade.size()+1);
+        Grade.add(new DailyGrade(count,adddata));
 
         aa = new DailyGradeAdapter(this, R.layout.info_row, Grade);
         lv.setAdapter(aa);
