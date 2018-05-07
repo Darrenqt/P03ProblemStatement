@@ -6,10 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class Info extends AppCompatActivity {
     Button info;
+    private ListView lv;
+    private ArrayAdapter aa;
+    private ArrayList<DailyGrade> Grade;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +42,14 @@ public class Info extends AppCompatActivity {
             }
         });
 
+        lv = (ListView)findViewById(R.id.lv);
+        Grade = new ArrayList<DailyGrade>();
+        Grade.add(new Grade("Android Programming II","C347","https://www.rp.edu.sg/schools-courses/courses/full-time-diplomas/full-time-courses/modules/index/C347"));
+        Grade.add(new Grade("Web Services","C302","https://www.rp.edu.sg/schools-courses/courses/full-time-diplomas/full-time-courses/modules/index/C302"));
 
+
+        aa = new CourseAdapter(this, R.layout.info_row, Grade);
+        lv.setAdapter(aa);
 
     }
 }
