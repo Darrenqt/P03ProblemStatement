@@ -44,11 +44,11 @@ public class DailyGradeAdapter extends ArrayAdapter<DailyGrade> {
         // The parameter "position" is the index of the
         //  row ListView is requesting.
         //  We get back the food at the same index.
-        grade currentGrade = grade.get(position);
+        DailyGrade currentGrade = grade.get(position);
         // Set the TextView to show the food
 
-        tvDG.setText(currentGrade.textViewDG);
-        tvGrade.setText(currentGrade.textViewGrade);
+        tvDG.setText("DG");
+        tvGrade.setText(currentGrade.getGrade());
 
         return rowView;
     }
