@@ -13,8 +13,16 @@ public class DailyGrade {
         return week;
     }
 
+
     public String getGrade() {
         return grade;
     }
 
+    public void setWeek(String week) {
+        this.week = week;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 }
