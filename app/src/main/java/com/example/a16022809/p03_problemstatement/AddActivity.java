@@ -14,7 +14,7 @@ public class AddActivity extends AppCompatActivity {
     RadioGroup rg;
     TextView textView2;
     Button btnSubmit;
-// add activity
+// add activity ---
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
